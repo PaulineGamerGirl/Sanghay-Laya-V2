@@ -6,7 +6,7 @@ const SECTIONS = ['Myths', 'Safety', 'Style', 'Sources', 'News'];
 
 export function OrbNavigation({ onSelectSection }: OrbNavigationProps) {
   return (
-    <div className="mt-16 flex flex-nowrap justify-start md:justify-center gap-4 md:gap-8 w-full max-w-5xl overflow-x-auto px-4 pb-8 custom-scrollbar">
+    <div className="mt-12 md:mt-16 flex flex-wrap md:flex-nowrap justify-center gap-6 md:gap-10 w-full max-w-7xl px-4 md:px-6 pt-8 pb-12 overflow-x-visible">
       {SECTIONS.map((section, index) => {
         // Trans Flag Color Sequence: Blue, Pink, White, Pink, Blue
         let mainColor = '#ffffff';
@@ -34,22 +34,22 @@ export function OrbNavigation({ onSelectSection }: OrbNavigationProps) {
           <button
             key={section}
             onClick={() => onSelectSection(section)}
-            className="animate-orb-float shrink-0 relative flex h-24 w-24 md:h-36 md:w-36 items-center justify-center rounded-full transition-all duration-500 hover:scale-110 focus:outline-none group"
+            className="animate-orb-float shrink-0 relative flex h-28 w-28 sm:h-36 sm:w-36 md:h-48 md:w-48 items-center justify-center rounded-full transition-all duration-500 hover:scale-110 focus:outline-none group"
             style={{ 
-              animationDelay: `${index * 0.2}s`,
+              animationDelay: `${index * 0.3}s`,
               background: `radial-gradient(circle at 30% 30%, #ffffff 0%, ${mainColor} 40%, #ffffff 100%)`,
-              boxShadow: `0 0 0 1px #E8C396, inset -8px -8px 20px ${shadowColor}, inset 8px 8px 20px rgba(255, 255, 255, 0.8), 0 15px 30px -10px rgba(59, 47, 47, 0.15)`
+              boxShadow: `0 0 0 1px #E8C396, inset -8px -8px 20px ${shadowColor}, inset 8px 8px 20px rgba(255, 255, 255, 0.8), 0 10px 20px -5px rgba(59, 47, 47, 0.1)`
             }}
           >
             {/* Glossy Overlay for extra shine */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 to-transparent pointer-events-none"></div>
             
-            <span className="font-heading text-lg md:text-xl font-medium text-espresso tracking-wide z-10 group-hover:text-pink transition-colors duration-300">
+            <span className="font-accent text-xl sm:text-2xl md:text-3xl text-espresso tracking-wide z-10 group-hover:text-pink transition-colors duration-300">
               {section}
             </span>
             
             {/* Outer Ring Glow */}
-            <div className={`absolute -inset-1 rounded-full border border-transparent ${hoverBorderClass} group-hover:scale-105 transition-all duration-500 pointer-events-none`}></div>
+            <div className={`absolute -inset-1.5 rounded-full border border-transparent ${hoverBorderClass} group-hover:scale-105 transition-all duration-500 pointer-events-none`}></div>
           </button>
         );
       })}

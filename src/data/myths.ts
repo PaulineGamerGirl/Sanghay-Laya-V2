@@ -1,21 +1,22 @@
 export interface Myth {
   id: string;
   title: string;
-  description: string;
   dangerLevel: 'high' | 'medium' | 'low';
+  misconception: string;
+  truthSnippet: string;
+  sourceName: string;
+  sourceLink: string;
 }
 
 export const mythsData: Myth[] = [
-  {
-    id: '1',
-    title: 'Placeholder Myth 1',
-    description: 'Placeholder description for myth 1.',
-    dangerLevel: 'high',
-  },
-  {
-    id: '2',
-    title: 'Placeholder Myth 2',
-    description: 'Placeholder description for myth 2.',
-    dangerLevel: 'medium',
-  },
+  { id: '1', title: 'The Regret Myth', dangerLevel: 'high', misconception: '"Most transgender people eventually regret transitioning and getting gender-affirming surgeries."', truthSnippet: 'A systematic review and meta-analysis of prevalence... [across] 27 studies and 7,928 patients... found that only 77 patients had regret—a rate of 1%. Regret after multiple other surgical procedures is significantly higher, such as 14% for general surgery and 17% for knee replacements.', sourceName: 'Plastic and Reconstructive Surgery', sourceLink: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8099405/' },
+  { id: '2', title: 'The Birth Control / DIY Myth', dangerLevel: 'high', misconception: '"Taking synthetic birth control pills like Diane-35 is a cheap, safe, and effective way to chemically transition."', truthSnippet: 'Historically, ethinyl estradiol [found in birth control] was used for feminization, but it has been linked to a 20-fold increase in cardiovascular mortality and venous thromboembolism (VTE). To mitigate life-threatening cardiovascular risks, synthetic estrogens must be avoided.', sourceName: 'National Library of Medicine', sourceLink: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10548402/' },
+  { id: '3', title: 'The Dosage Myth', dangerLevel: 'medium', misconception: '"Taking much higher doses of estrogen or testosterone will speed up your physical changes and give you faster results."', truthSnippet: 'Taking higher doses of hormones will not necessarily bring about faster changes, but it could endanger your health... One known risk is that [excess] testosterone can make your blood become too thick... which can cause a stroke, heart attack, or other conditions.', sourceName: 'UCSF Gender Program', sourceLink: 'https://transcare.ucsf.edu/article/information-testosterone-hormone-therapy' },
+  { id: '4', title: 'The Voice Pitch Myth', dangerLevel: 'low', misconception: '"If a transfeminine person starts taking estrogen, her voice will automatically become higher and more feminine over time."', truthSnippet: 'Feminizing hormone therapy does not have any effect on voice pitch or character. Changes to voice pitch require specialized voice therapy or, in some cases, vocal surgery.', sourceName: 'UCSF Gender Program', sourceLink: 'https://transcare.ucsf.edu/article/information-estrogen-hormone-therapy' },
+  { id: '5', title: 'The "Detransition" Myth', dangerLevel: 'low', misconception: '"Large numbers of people detransition because they realize they were wrong about being transgender."', truthSnippet: 'De-transitioning is not necessarily tied to regret, and can be part of someone\'s gender journey. Most people who stop a medical transition do so because they are forced to detransition by external forces [such as lack of family support, financial barriers, or transphobia].', sourceName: 'Fenway Health', sourceLink: 'https://fenwayhealth.org/wp-content/uploads/Detransitioning-and-Retransitioning-graham-1.pdf' },
+  { id: '6', title: 'The "Bathroom Predator" Myth', dangerLevel: 'high', misconception: '"Allowing transgender women to use the women\'s restroom puts cisgender women and children at risk of assault."', truthSnippet: 'Research shows no evidence of safety risks for cisgender people when trans people use restrooms aligning with their authentic gender; in fact, transgender people are at elevated risk for harassment and violence in these spaces.', sourceName: 'GLAAD / MAP', sourceLink: 'https://glaad.org/fact-sheet-misleading-narratives-about-transgender-people-and-restrooms-locker-rooms-and-other-single-sex-spaces/' },
+  { id: '7', title: 'The Sports Advantage Myth', dangerLevel: 'low', misconception: '"Transgender women have an inherent, unbeatable biological advantage over cisgender women in sports."', truthSnippet: 'Trans athletes vary in athletic ability just like cisgender athletes. A person\'s genetic make-up and internal and external reproductive anatomy are not useful indicators of athletic performance.', sourceName: 'ACLU', sourceLink: 'https://www.aclu.org/news/lgbtq-rights/four-myths-about-trans-athletes-debunked' },
+  { id: '8', title: 'The "Phase" Myth', dangerLevel: 'high', misconception: '"Being transgender is just a teenage phase, a trend, or a social contagion caused by peer pressure."', truthSnippet: 'Supportive evidence-based interventions... greatly improve mental health outcomes for transgender youth... The distress experienced by youth when such treatments are delayed or denied is significantly higher than any distress from discontinuing treatment later.', sourceName: 'APA', sourceLink: 'https://www.apa.org/topics/lgbtq/gender-affirmative-care' },
+  { id: '9', title: 'The Surgical Requirement Myth', dangerLevel: 'medium', misconception: '"You must undergo bottom surgery (genital reconstruction) to be considered \'truly\' transgender."', truthSnippet: 'There is individual variability in whether transgender people seek gender-affirming surgery, and which surgeries. There are many ways of affirming gender. Helping people make informed decisions at each stage and self-determination are key.', sourceName: 'Fenway Health', sourceLink: 'https://fenwayhealth.org/wp-content/uploads/Key-Take-Away-Points.pdf' },
+  { id: '10', title: 'The Violence/Crime Myth', dangerLevel: 'high', misconception: '"Transgender people are mentally unstable and pose a violent threat to society."', truthSnippet: 'There is no evidence of escalating violence committed by LGBTQ people... Despite being less than 2% of the U.S. adult population, transgender people are four times as likely to be victims of crime. Accusing people from a small and vulnerable community of mass shooting crimes is an effort to further dehumanize.', sourceName: 'GLAAD Alert Desk', sourceLink: 'https://glaad.org/debunking-trans-terrorism/' }
 ];

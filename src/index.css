@@ -6,6 +6,7 @@
   --color-pink: var(--color-accent-pink);
   --color-blue: var(--color-accent-blue);
   --color-espresso: var(--color-text-espresso);
+  --color-bluish-grey: #6B7280;
   --color-alert: var(--color-alert-red);
   --font-body: var(--font-body);
   --font-heading: var(--font-heading);
@@ -19,7 +20,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-30px);
   }
 }
 
@@ -53,10 +54,9 @@ body {
   font-family: var(--font-body);
   color: var(--color-text-espresso);
   background-color: var(--color-bg-cream);
-  /* Subtle paper texture using radial gradients */
+  /* Enhanced paper texture */
   background-image: 
-    radial-gradient(circle at 50% 50%, rgba(59, 47, 47, 0.03) 1px, transparent 1px),
-    radial-gradient(circle at 0% 0%, rgba(59, 47, 47, 0.02) 1px, transparent 1px);
-  background-size: 16px 16px, 24px 24px;
-  background-position: 0 0, 8px 8px;
+    url("https://www.transparenttextures.com/patterns/paper-fibers.png"),
+    radial-gradient(circle at 50% 50%, rgba(59, 47, 47, 0.03) 1px, transparent 1px);
+  background-blend-mode: multiply;
 }
