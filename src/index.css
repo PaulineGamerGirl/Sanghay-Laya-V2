@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Varela+Round&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-cream: var(--color-bg-cream);
+  --color-pink: var(--color-accent-pink);
+  --color-blue: var(--color-accent-blue);
+  --color-espresso: var(--color-text-espresso);
+  --color-alert: var(--color-alert-red);
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+  --font-accent: var(--font-accent);
+  --animate-swan-float: swan-float 1s ease-out forwards;
+  --animate-orb-float: orb-float 4s ease-in-out infinite;
+}
+
+@keyframes orb-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes swan-float {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% - 60px)) scale(1.2);
+  }
+}
+
+:root {
+  --color-bg-cream: #FDFBF7;
+  --color-accent-pink: #F4C2C2;
+  --color-accent-blue: #B9E2F5;
+  --color-text-espresso: #3B2F2F;
+  --color-alert-red: #D27D7D;
+  --font-body: 'Varela Round', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-accent: 'Pinyon Script', cursive;
+}
+
+body, button, a, input, select, textarea {
+  cursor: none !important;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-espresso);
+  background-color: var(--color-bg-cream);
+  /* Subtle paper texture using radial gradients */
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(59, 47, 47, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 0% 0%, rgba(59, 47, 47, 0.02) 1px, transparent 1px);
+  background-size: 16px 16px, 24px 24px;
+  background-position: 0 0, 8px 8px;
+}
