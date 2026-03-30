@@ -5,14 +5,20 @@
 
 import { useState } from 'react';
 import { PanicButton, CustomCursor, OrbNavigation, SectionContainer, Myths, AmbientBackground, Safety, Style, Sources, News, Methodology } from './components';
+import { ModeToggle } from './components/ModeToggle';
+import { TransmascOverlay } from './components/transmasc/TransmascOverlay';
 import { usePanicExit } from './hooks';
+import { useAppContext } from './context/AppContext';
 
 export default function App() {
   usePanicExit();
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const { appMode } = useAppContext();
 
   return (
-    <div className="min-h-screen bg-cream flex flex-col items-center justify-center p-6 text-center relative">
+    <div className="min-h-screen bg-cream flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+      <ModeToggle />
+      <TransmascOverlay />
       <AmbientBackground />
       <CustomCursor />
       <h1 className="font-heading text-pink text-5xl sm:text-7xl md:text-9xl font-bold tracking-tight drop-shadow-[0_0_15px_rgba(244,194,194,0.6)] z-10 leading-tight md:leading-none">

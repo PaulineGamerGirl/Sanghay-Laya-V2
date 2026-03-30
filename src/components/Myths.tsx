@@ -56,7 +56,7 @@ export function Myths() {
   };
 
   return (
-    <div className="relative w-full h-full min-h-[500px] flex flex-col justify-center bg-cream">
+    <div className="relative w-full h-full min-h-[500px] flex flex-col justify-center bg-[#FFF9F9]">
       <div 
         ref={viewportRef}
         className="w-full overflow-x-hidden flex items-center py-12 cursor-grab active:cursor-grabbing"
@@ -77,7 +77,7 @@ export function Myths() {
           </div>
         </div>
       </div>
-      <div className="text-center mt-2 pb-6 text-espresso/50 font-body text-sm tracking-wide">
+      <div className="text-center mt-2 pb-6 text-themeTextMain/50 font-body text-sm tracking-wide">
         Move mouse to edges to scroll faster • Click cards to reveal
       </div>
     </div>

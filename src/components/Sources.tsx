@@ -16,10 +16,10 @@ export function Sources() {
       <div className="relative mb-10">
         <div className="flex justify-between items-start">
           <div className="space-y-2">
-            <h2 className="font-heading text-4xl md:text-5xl text-espresso font-bold">
+            <h2 className="font-heading text-4xl md:text-5xl text-themeTextMain font-bold">
               HRT Shops & Care
             </h2>
-            <p className="font-body italic text-espresso/60 text-lg">
+            <p className="font-body italic text-themeTextMain/60 text-lg">
               Sister-verified services and legitimate medical providers.
             </p>
           </div>
@@ -37,8 +37,8 @@ export function Sources() {
             className={`
               rounded-full px-4 py-1 text-[10px] font-bold tracking-widest uppercase transition-all duration-300
               ${activeFilter === category 
-                ? 'bg-[#B5E2E4] text-espresso shadow-sm scale-105' 
-                : 'bg-white border border-gray-100 text-espresso/60 hover:bg-cream/50'}
+                ? 'bg-themeAccent text-themeTextMain shadow-sm scale-105' 
+                : 'bg-white border border-gray-100 text-themeTextMain/60 hover:bg-themeBg/50'}
             `}
           >
             {category}
@@ -51,26 +51,26 @@ export function Sources() {
         {displayedSources.map((source) => (
           <div 
             key={source.id}
-            className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-md hover:border-[#B5E2E4]/30"
+            className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm relative overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-md"
           >
             {/* Background Letter */}
-            <span className="absolute -bottom-4 -right-2 text-[8rem] font-heading opacity-[0.03] text-espresso pointer-events-none select-none">
+            <span className="absolute -bottom-4 -right-2 text-[8rem] font-heading opacity-[0.03] text-themeTextMain pointer-events-none select-none">
               {source.initial}
             </span>
 
             {/* Card Header */}
             <div className="flex justify-between items-center">
-              <span className="uppercase tracking-widest text-[9px] font-bold text-[#B5E2E4]">
+              <span className="uppercase tracking-widest text-[9px] font-bold text-themeAccent">
                 {source.category}
               </span>
               <span className="text-sm">🏵️</span>
             </div>
 
             {/* Card Body */}
-            <h3 className="font-heading font-bold text-xl text-espresso mt-3">
+            <h3 className="font-heading font-bold text-xl text-themeTextMain mt-3">
               {source.name}
             </h3>
-            <p className="font-body italic text-sm text-espresso/80 mt-2 flex-grow leading-relaxed">
+            <p className="font-body italic text-sm text-themeTextMain/80 mt-2 flex-grow leading-relaxed">
               {source.description}
             </p>
 
@@ -80,11 +80,11 @@ export function Sources() {
                 href={source.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="uppercase underline text-[10px] font-bold text-[#B5E2E4] hover:text-espresso transition-colors"
+                className="uppercase underline text-[10px] font-bold text-themeAccent hover:text-themeTextMain transition-colors"
               >
                 VISIT SITE
               </a>
-              <button className="uppercase text-[10px] font-bold text-pink hover:opacity-70 transition-opacity">
+              <button className="uppercase text-[10px] font-bold text-themeAccent hover:opacity-70 transition-opacity">
                 REQUEST INFO -&gt;
               </button>
             </div>

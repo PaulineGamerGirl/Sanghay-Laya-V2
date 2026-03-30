@@ -44,7 +44,7 @@ export function OrbNavigation({ onSelectSection }: OrbNavigationProps) {
             {/* Glossy Overlay for extra shine */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 to-transparent pointer-events-none"></div>
             
-            <span className="font-accent text-xl sm:text-2xl md:text-3xl text-espresso tracking-wide z-10 group-hover:text-pink transition-colors duration-300">
+            <span className="font-accent text-xl sm:text-2xl md:text-3xl text-themeTextMain tracking-wide z-10 group-hover:text-themeAccent transition-colors duration-300">
               {section}
             </span>
             

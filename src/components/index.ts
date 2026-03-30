@@ -14,3 +14,4 @@ export * from './ThriftMap';
 export * from './Sources';
 export * from './News';
 export * from './Methodology';
+export * from './ThemeToggle';

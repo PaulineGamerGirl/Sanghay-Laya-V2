@@ -19,10 +19,10 @@ export function Style() {
       {/* Header Area */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6">
         <div className="space-y-2">
-          <h2 className="font-heading text-4xl md:text-5xl text-espresso font-bold">
+          <h2 className="font-heading text-4xl md:text-5xl text-themeTextMain font-bold">
             The Dressing Room
           </h2>
-          <p className="font-body italic text-espresso/60 text-lg">
+          <p className="font-body italic text-themeTextMain/60 text-lg">
             Expressing your true self through silhouette and style.
           </p>
         </div>
@@ -36,18 +36,18 @@ export function Style() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`
-                  relative bg-cream rounded-xl flex flex-col items-center justify-center p-3 w-24 h-24
+                  relative bg-white border border-gray-100 rounded-xl flex flex-col items-center justify-center p-3 w-24 h-24
                   transition-all duration-300 cursor-pointer select-none
                   ${isActive 
-                    ? 'shadow-md scale-105 opacity-100' 
+                    ? 'shadow-md scale-105 opacity-100 border-pink-200' 
                     : 'shadow-sm opacity-70 hover:opacity-90 hover:scale-102'}
                 `}
               >
                 {isActive && (
-                  <div className="absolute top-2 w-1.5 h-1.5 rounded-full bg-pink animate-pulse" />
+                  <div className="absolute top-2 w-1.5 h-1.5 rounded-full bg-themeAccent animate-pulse" />
                 )}
                 <span className="text-2xl mb-2">{tab.icon}</span>
-                <span className={`text-[10px] tracking-widest font-bold text-espresso text-center ${isActive ? 'opacity-100' : 'opacity-80'}`}>
+                <span className={`text-[10px] tracking-widest font-bold text-themeTextMain text-center ${isActive ? 'opacity-100' : 'opacity-80'}`}>
                   {tab.label}
                 </span>
               </button>
@@ -57,10 +57,10 @@ export function Style() {
       </div>
 
       {/* Divider */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-pink/40 to-transparent mb-12" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-themeAccent/40 to-transparent mb-12" />
 
       {/* Content Wrapper */}
-      <div className="min-h-[400px] font-body text-espresso/80 text-center flex items-center justify-center">
+      <div className="min-h-[400px] font-body text-themeTextMain/80 text-center flex items-center justify-center">
         {activeTab === 'map' && (
           <div className="w-full animate-in fade-in slide-in-from-bottom-4 duration-700">
             <ThriftMap />

@@ -18,10 +18,10 @@ export function Safety() {
             className="space-y-12"
           >
             <div className="text-center space-y-4">
-              <h2 className="font-heading text-4xl md:text-6xl text-espresso">
+              <h2 className="font-heading text-4xl md:text-6xl text-themeTextMain">
                 The Safety Journal
               </h2>
-              <p className="font-body text-espresso/60 text-lg max-w-2xl mx-auto">
+              <p className="font-body text-themeTextMain/60 text-lg max-w-2xl mx-auto">
                 A comprehensive, evidence-based protocol for trans health.
               </p>
             </div>
@@ -31,14 +31,14 @@ export function Safety() {
                 <button
                   key={topic.id}
                   onClick={() => setActiveTopicId(topic.id)}
-                  className="group relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-pink/10 hover:shadow-xl hover:shadow-pink/5 transition-all duration-500 text-center flex flex-col items-center justify-between min-h-[320px] cursor-pointer"
+                  className="group relative bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-pink-100 transition-all duration-500 text-center flex flex-col items-center justify-between min-h-[320px] cursor-pointer"
                 >
                   <div className="space-y-6">
                     <span className="text-4xl block transform group-hover:scale-110 transition-transform duration-500">
                       {topic.emoji}
                     </span>
                     <div className="space-y-2">
-                      <h3 className="font-heading text-xl font-bold uppercase tracking-widest text-espresso">
+                      <h3 className="font-heading text-xl font-bold uppercase tracking-widest text-themeTextMain">
                         {topic.title}
                       </h3>
                       {topic.isHighAlert && (
@@ -50,7 +50,7 @@ export function Safety() {
                   </div>
                   
                   <div className="w-full flex justify-end mt-8">
-                    <span className="text-[10px] font-bold tracking-widest text-pink group-hover:translate-x-2 transition-transform duration-300">
+                    <span className="text-[10px] font-bold tracking-widest text-themeAccent group-hover:translate-x-2 transition-transform duration-300">
                       READ FOLDER -&gt;
                     </span>
                   </div>
@@ -64,7 +64,7 @@ export function Safety() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            className="bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-16 shadow-2xl border border-pink/10 relative overflow-hidden"
+            className="bg-white rounded-3xl p-8 md:p-16 shadow-2xl border border-gray-100 relative overflow-hidden"
           >
             {/* Back Button - Increased hit area and z-index */}
             <button
@@ -73,7 +73,7 @@ export function Safety() {
                 e.stopPropagation();
                 setActiveTopicId(null);
               }}
-              className="absolute top-4 left-4 md:top-8 md:left-8 z-50 p-4 -m-4 text-[10px] font-bold tracking-widest text-espresso/60 hover:text-pink transition-all duration-300 flex items-center gap-2 group cursor-pointer"
+              className="absolute top-4 left-4 md:top-8 md:left-8 z-50 p-4 -m-4 text-[10px] font-bold tracking-widest text-themeTextMain/60 hover:text-themeAccent transition-all duration-300 flex items-center gap-2 group cursor-pointer"
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300">&lt;-</span> 
               BACK TO INDEX
@@ -83,7 +83,7 @@ export function Safety() {
               {/* Header */}
               <div className="text-center space-y-6">
                 <span className="text-8xl block">{activeTopic?.emoji}</span>
-                <h2 className="font-heading text-4xl md:text-6xl text-espresso tracking-tight">
+                <h2 className="font-heading text-4xl md:text-6xl text-themeTextMain tracking-tight">
                   {activeTopic?.title}
                 </h2>
               </div>
@@ -100,25 +100,25 @@ export function Safety() {
                 </section>
 
                 <section className="space-y-4">
-                  <h4 className="text-[10px] font-bold tracking-[0.3em] text-espresso/40 uppercase">
+                  <h4 className="text-[10px] font-bold tracking-[0.3em] text-themeTextMain/40 uppercase">
                     THE TRUTH
                   </h4>
-                  <p className="font-body text-lg md:text-xl text-espresso/80 leading-relaxed">
+                  <p className="font-body text-lg md:text-xl text-themeTextMain/80 leading-relaxed">
                     {activeTopic?.truthSnippet}
                   </p>
                 </section>
               </div>
 
               {/* Footer / Citations */}
-              <div className="pt-16 border-t border-espresso/5 space-y-6">
-                <h4 className="text-[10px] font-bold tracking-[0.3em] text-espresso/40 uppercase">
+              <div className="pt-16 border-t border-themeTextMain/5 space-y-6">
+                <h4 className="text-[10px] font-bold tracking-[0.3em] text-themeTextMain/40 uppercase">
                   EVIDENCE BASE / CITATIONS
                 </h4>
                 <a
                   href={activeTopic?.sourceLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-espresso text-white text-xs font-bold tracking-widest rounded-full hover:bg-pink transition-colors duration-500 group cursor-pointer"
+                  className="inline-flex items-center px-6 py-3 bg-[#3E2723] text-white text-xs font-bold tracking-widest rounded-full hover:bg-[#FFB7B2] transition-colors duration-500 group cursor-pointer"
                 >
                   {activeTopic?.sourceName}
                   <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">↗</span>

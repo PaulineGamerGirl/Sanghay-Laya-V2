@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { thriftSpots, ThriftSpot } from '../data/style';
+import { transmascThriftSpots, TransmascThriftSpot } from '../../data/transmasc/transmascThrift';
 
 // Fix Leaflet's default icon issue with a custom emoji icon
 const thriftIcon = L.divIcon({
@@ -13,8 +13,8 @@ const thriftIcon = L.divIcon({
   popupAnchor: [0, -15],
 });
 
-export function ThriftMap() {
-  const [activeSpot, setActiveSpot] = useState<ThriftSpot | null>(thriftSpots[0]);
+export function TransmascThriftMap() {
+  const [activeSpot, setActiveSpot] = useState<TransmascThriftSpot | null>(transmascThriftSpots[0]);
 
   // Ensure map renders correctly by triggering a resize event after mount
   useEffect(() => {
@@ -23,7 +23,7 @@ export function ThriftMap() {
 
   return (
     <div className="w-full max-w-5xl mx-auto text-left animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <h3 className="font-heading italic text-xl text-themeTextMain font-bold mb-6 flex items-center gap-2">
+      <h3 className="font-heading italic text-xl text-[#2F3E46] font-bold mb-6 flex items-center gap-2">
         <span>🪞</span> Metro Thrift Guide
       </h3>
 
@@ -39,7 +39,7 @@ export function ThriftMap() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          {thriftSpots.map((spot) => (
+          {transmascThriftSpots.map((spot) => (
             <Marker 
               key={spot.id} 
               position={spot.coordinates}
@@ -49,7 +49,7 @@ export function ThriftMap() {
               }}
             >
               <Popup>
-                <div className="font-heading font-bold text-themeTextMain">
+                <div className="font-heading font-bold text-[#2F3E46]">
                   {spot.name}
                 </div>
               </Popup>
@@ -60,7 +60,7 @@ export function ThriftMap() {
 
       {/* Detail Card */}
       {activeSpot && (
-        <div className="bg-white rounded-[2rem] border border-themeAccent/30 p-4 md:p-6 flex flex-col md:flex-row gap-6 shadow-sm animate-in fade-in zoom-in-95 duration-500">
+        <div className="bg-white/80 backdrop-blur-sm rounded-[2rem] border border-[#84A98C]/30 p-4 md:p-6 flex flex-col md:flex-row gap-6 shadow-sm animate-in fade-in zoom-in-95 duration-500">
           <div className="w-full md:w-64 h-48 shrink-0 overflow-hidden rounded-2xl">
             <img 
               src={activeSpot.imageUrl} 
@@ -72,38 +72,38 @@ export function ThriftMap() {
           
           <div className="flex-1 flex flex-col">
             <div className="flex items-start justify-between mb-2">
-              <h2 className="font-heading font-bold text-2xl text-themeTextMain">
+              <h2 className="font-heading font-bold text-2xl text-[#2F3E46]">
                 {activeSpot.name}
               </h2>
-              <span className="bg-themeAccent/10 text-themeTextMain text-[10px] font-bold tracking-widest px-3 py-1 rounded-full ml-auto">
+              <span className="bg-[#84A98C]/10 text-[#52796F] text-[10px] font-bold tracking-widest px-3 py-1 rounded-full ml-auto border border-[#84A98C]/20">
                 {activeSpot.badge}
               </span>
             </div>
             
-            <p className="text-sm text-themeTextMain/70 mb-4 flex items-center gap-2">
+            <p className="text-sm text-[#2F3E46]/70 mb-4 flex items-center gap-2">
               <span>🚇</span> {activeSpot.station}
             </p>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-3 gap-4 mb-4">
-              <div className="border border-gray-100 rounded-xl p-2 text-center flex flex-col items-center justify-center bg-gray-50">
-                <span className="text-[8px] font-bold tracking-widest text-themeTextMain/50 uppercase">Walk</span>
-                <span className="text-xs font-bold text-themeTextMain">{activeSpot.walkTime}</span>
+              <div className="border border-[#2F3E46]/5 rounded-xl p-2 text-center flex flex-col items-center justify-center bg-[#F4F5F0]/50">
+                <span className="text-[8px] font-bold tracking-widest text-[#2F3E46]/50 uppercase">Walk</span>
+                <span className="text-xs font-bold text-[#2F3E46]">{activeSpot.walkTime}</span>
               </div>
-              <div className="border border-gray-100 rounded-xl p-2 text-center flex flex-col items-center justify-center bg-gray-50">
-                <span className="text-[8px] font-bold tracking-widest text-themeTextMain/50 uppercase">Price</span>
-                <span className="text-xs font-bold text-themeTextMain">{activeSpot.price}</span>
+              <div className="border border-[#2F3E46]/5 rounded-xl p-2 text-center flex flex-col items-center justify-center bg-[#F4F5F0]/50">
+                <span className="text-[8px] font-bold tracking-widest text-[#2F3E46]/50 uppercase">Price</span>
+                <span className="text-xs font-bold text-[#2F3E46]">{activeSpot.price}</span>
               </div>
-              <div className="border border-gray-100 rounded-xl p-2 text-center flex flex-col items-center justify-center bg-gray-50">
-                <span className="text-[8px] font-bold tracking-widest text-themeTextMain/50 uppercase">Target</span>
-                <span className="text-[10px] font-bold text-themeTextMain leading-tight">{activeSpot.target}</span>
+              <div className="border border-[#2F3E46]/5 rounded-xl p-2 text-center flex flex-col items-center justify-center bg-[#F4F5F0]/50">
+                <span className="text-[8px] font-bold tracking-widest text-[#2F3E46]/50 uppercase">Target</span>
+                <span className="text-[10px] font-bold text-[#2F3E46] leading-tight">{activeSpot.target}</span>
               </div>
             </div>
 
             {/* Directions Box */}
-            <div className="bg-pink-50 rounded-xl p-4 border border-pink-100">
-              <span className="text-themeAccent font-bold tracking-widest text-[10px] block mb-1">DIRECTIONS</span>
-              <p className="font-body italic text-themeTextMain/80 text-sm leading-relaxed">
+            <div className="bg-[#84A98C]/5 rounded-xl p-4 border border-[#84A98C]/10">
+              <span className="text-[#52796F] font-bold tracking-widest text-[10px] block mb-1">DIRECTIONS</span>
+              <p className="font-body italic text-[#2F3E46]/80 text-sm leading-relaxed">
                 {activeSpot.directions}
               </p>
             </div>

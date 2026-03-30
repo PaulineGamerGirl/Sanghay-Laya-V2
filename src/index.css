@@ -13,6 +13,12 @@
   --font-accent: var(--font-accent);
   --animate-swan-float: swan-float 1s ease-out forwards;
   --animate-orb-float: orb-float 4s ease-in-out infinite;
+
+  /* Dynamic Theme Colors */
+  --color-theme-bg: var(--color-bg);
+  --color-theme-text-main: var(--color-text-main);
+  --color-theme-accent: var(--color-accent);
+  --color-theme-subtext: var(--color-subtext);
 }
 
 @keyframes orb-float {
@@ -44,6 +50,19 @@
   --font-body: 'Varela Round', sans-serif;
   --font-heading: 'Playfair Display', serif;
   --font-accent: 'Pinyon Script', cursive;
+
+  /* Theme variables */
+  --color-bg: #FDFBF7; /* Cream */
+  --color-text-main: #3E2723; /* Espresso */
+  --color-accent: #FFB7B2; /* Pink */
+  --color-subtext: #6E7C8C; /* Grey-blue */
+}
+
+.theme-transmasc {
+  --color-bg: #F4F5F0; /* Cool Ash / Sage-tinted white */
+  --color-text-main: #2F3E46; /* Deep Slate */
+  --color-accent: #84A98C; /* Sage Green */
+  --color-subtext: #52796F; /* Muted Pine */
 }
 
 body, button, a, input, select, textarea {
@@ -52,8 +71,9 @@ body, button, a, input, select, textarea {
 
 body {
   font-family: var(--font-body);
-  color: var(--color-text-espresso);
-  background-color: var(--color-bg-cream);
+  color: var(--color-text-main);
+  background-color: var(--color-bg);
+  transition: background-color 0.5s ease, color 0.5s ease;
   /* Enhanced paper texture */
   background-image: 
     url("https://www.transparenttextures.com/patterns/paper-fibers.png"),

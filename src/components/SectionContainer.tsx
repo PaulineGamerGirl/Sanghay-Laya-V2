@@ -9,18 +9,18 @@ interface SectionContainerProps {
 
 export function SectionContainer({ title, onClose, children, noPadding = false }: SectionContainerProps) {
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center bg-espresso/20 backdrop-blur-md p-4 sm:p-6 transition-opacity duration-300">
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20 p-4 sm:p-6 transition-opacity duration-300">
       {/* Inner Card */}
-      <div className="relative w-full max-w-5xl h-[85vh] bg-cream rounded-[2rem] shadow-2xl flex flex-col overflow-hidden border border-white/60">
+      <div className="relative w-full max-w-5xl h-[85vh] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-gray-100">
         
         {/* Sticky Header */}
-        <header className="sticky top-0 z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-6 bg-cream/95 backdrop-blur-sm border-b border-espresso/10">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-espresso tracking-tight">
+        <header className="sticky top-0 z-10 flex items-center justify-between px-6 py-5 md:px-10 md:py-6 bg-white border-b border-gray-100">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-themeTextMain tracking-tight">
             {title}
           </h2>
           <button
             onClick={onClose}
-            className="p-2 rounded-full text-espresso/60 hover:text-pink hover:bg-pink/10 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pink/50"
+            className="p-2 rounded-full text-themeTextMain/60 hover:text-themeAccent hover:bg-themeAccent/10 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-themeAccent/50"
             aria-label="Close"
           >
             <svg 

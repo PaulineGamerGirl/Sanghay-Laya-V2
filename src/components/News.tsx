@@ -5,19 +5,19 @@ export function News() {
     <div className="w-full max-w-5xl mx-auto p-4 md:p-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       {/* Header */}
       <div className="mb-10 text-left">
-        <h2 className="font-heading text-4xl md:text-5xl text-espresso font-bold mb-2">
+        <h2 className="font-heading text-4xl md:text-5xl text-themeTextMain font-bold mb-2">
           🗞️ The Community Gazette
         </h2>
-        <p className="font-body italic text-espresso/80 text-lg">
+        <p className="font-body italic text-themeTextMain/80 text-lg">
           Live updates, milestones, and stories from the community.
         </p>
       </div>
 
       {/* Disclaimer */}
-      <div className="mb-8 p-4 rounded-2xl bg-pink/5 border border-pink/10 flex items-start gap-3 max-w-3xl">
-        <span className="text-pink text-lg shrink-0">⚠️</span>
-        <p className="font-body text-xs md:text-sm text-espresso/70 leading-relaxed">
-          <span className="font-bold text-pink">Gentle Warning:</span> Real-time news can sometimes be heavy or distressing. Please prioritize your mental well-being and read with care. Your peace is more important than the headlines.
+      <div className="mb-8 p-4 rounded-2xl bg-pink-50 border border-pink-100 flex items-start gap-3 max-w-3xl">
+        <span className="text-themeAccent text-lg shrink-0">⚠️</span>
+        <p className="font-body text-xs md:text-sm text-themeTextMain/70 leading-relaxed">
+          <span className="font-bold text-themeAccent">Gentle Warning:</span> Real-time news can sometimes be heavy or distressing. Please prioritize your mental well-being and read with care. Your peace is more important than the headlines.
         </p>
       </div>
 
@@ -29,11 +29,11 @@ export function News() {
             href={portal.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white rounded-[2rem] p-6 border border-accent-pink/30 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group"
+            className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group"
           >
             <div className="flex justify-between items-start">
               <span className="text-3xl">{portal.emoji}</span>
-              <span className="text-espresso/30 group-hover:text-pink transition-colors duration-300">
+              <span className="text-themeTextMain/30 group-hover:text-themeAccent transition-colors duration-300">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   width="20" 
@@ -52,15 +52,15 @@ export function News() {
               </span>
             </div>
             
-            <h3 className="font-heading font-bold text-xl mt-4 text-espresso">
+            <h3 className="font-heading font-bold text-xl mt-4 text-themeTextMain">
               {portal.title}
             </h3>
             
-            <p className="font-body text-sm text-espresso/70 mt-2 flex-grow leading-relaxed">
+            <p className="font-body text-sm text-themeTextMain/70 mt-2 flex-grow leading-relaxed">
               {portal.description}
             </p>
             
-            <div className="text-[10px] font-bold tracking-widest uppercase mt-4 text-right text-pink opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="text-[10px] font-bold tracking-widest uppercase mt-4 text-right text-themeAccent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               READ LIVE -&gt;
             </div>
           </a>
